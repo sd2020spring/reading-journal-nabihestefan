@@ -57,37 +57,37 @@ def triangle(t, r, angle):
     t.fd(r)
     t.lt(180 - angle)
 
+def spiral(t, n, l, m):
+    for i in range (n):
+        bob.fd(l)
+        bob.lt(m)
 
-bob.pu()
-bob.bk(400)
-bob.pd()
+def moveBob(t, x, y):
+    bob.pu()
+    bob.setposition(x,y)
+    bob.pd()
+
+
+bob.speed(0)
+
+moveBob(bob, -400, 0)
 square(bob, 50)
 
-bob.pu()
-bob.fd(150)
-bob.pd()
+moveBob(bob, -250, 0)
 polygon(bob, 6, 100)
 
-bob.pu()
-bob.fd(250)
-bob.pd()
+moveBob(bob, 0, 0)
 circle(bob, 70)
 
-bob.pu()
-bob.fd(150)
-bob.lt(90)
-bob.fd(50)
-bob.rt(90)
-bob.pd()
+moveBob(bob, 200, 50)
+
 pie(bob, 5, 50)
 
-bob.pu()
-bob.fd(200)
-bob.lt(90)
-bob.fd(50)
-bob.rt(90)
-bob.pd()
+moveBob(bob, 400, 100)
 pie(bob, 10, 100)
+
+moveBob(bob, 0, -100)
+spiral(bob, 100, 100, 125)
 
 
 bob.hideturtle()
